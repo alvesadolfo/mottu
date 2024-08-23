@@ -1,0 +1,29 @@
+<router-outlet></router-outlet>
+<app-header></app-header>
+<div class="flex flex-col w-full items-center">
+  <div class="md:container px-4 mt-14 w-full">
+    <div class="flex items-center justify-between">
+      <div class="creepster-regular title-page">Início</div>
+      <div>
+        <app-input-search
+          class="w-80 sm:w-[50%]"
+          [placeholder]="placeHolderSearch"
+          [inputClass]="'text-md'"
+          [divClass]="'w-full'"
+          (ngModelChange)="onSearchText($event)"
+          [(ngModel)]="inputSearchValue"
+        ></app-input-search>
+      </div>
+    </div>
+    <div *ngIf="!agentsFiltered.length" class="bg-secondary not-content">
+      <div class="notice-label">Nada foi encontrado</div>
+      <div class="info-label">Tente realizar uma nova busca.</div>
+    </div>
+    <div *ngIf="agentsFiltered.length" class="flex flex-wrap list-cards">
+      <app-card
+        *ngFor="let agent of agentsFiltered"
+        [profile]="agent"
+      ></app-card>
+    </div>
+  </div>
+</div>

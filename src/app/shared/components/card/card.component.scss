@@ -1,0 +1,68 @@
+.card-char {
+  border-radius: 12px;
+  border: 1px solid #3d3d3d;
+  background-color: #0a0a0a;
+  width: 224px;
+  height: 298px;
+  position: relative;
+
+  img {
+    border-radius: 12px 12px 0 0;
+  }
+
+  .name-char {
+    padding: 12px 12px 0 12px;
+    line-height: 24px;
+    color: #fafafa;
+    font-size: 24px;
+  }
+
+  .type-char {
+    padding: 4px 12px 12px 12px;
+    color: #a4a4a4;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .btn-fav {
+    position: absolute;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    text-align: end;
+    padding: 9px;
+
+    .icon-fav {
+      height: 30px;
+      padding: 5px;
+
+      fa-icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .not-fav {
+    color: white;
+  }
+
+  .hover-fav:hover {
+    color: #0a0a0a !important;
+  }
+
+  .btn-fav:hover {
+    background-color: #ffffff;
+    border-radius: 0 24px 0 100px;
+    color: #0a0a0a !important;
+
+    .hover-fav {
+      color: #0a0a0a !important;
+    }
+  }
+
+  .is-fav {
+    background-color: #ffffff;
+    border-radius: 0 24px 0 100px;
+    color: #0a0a0a !important;
+  }
+}

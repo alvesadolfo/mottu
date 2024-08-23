@@ -1,0 +1,16 @@
+<div class="card-char">
+  <div class="btn-fav" [ngClass]="{ 'is-fav': isFavorite }">
+    <div class="icon-fav" (click)="handleFavorite(profile)">
+      <fa-icon
+        class="text-sm cursor-pointer"
+        [ngClass]="{ 'not-fav hover-fav': !isFavorite }"
+        [icon]="isFavorite ? icons.faHearth : icons.farHeart"
+      ></fa-icon>
+    </div>
+  </div>
+  <img [src]="profile?.image" />
+  <div class="creepster-regular name-char line-clamp-1">
+    {{ profile?.name }}
+  </div>
+  <div class="type-char">{{ profile?.species }}</div>
+</div>

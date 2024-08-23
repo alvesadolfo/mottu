@@ -1,0 +1,32 @@
+<div
+  class="bg-secondary h-16 flex items-center justify-between px-4 fixed w-full z-10"
+>
+  <a href="/home"><img class="logo" src="/assets/logo.png" /></a>
+  <div class="flex items-center font-semibold menu-header">
+    <div
+      class="flex items-center gap-2"
+      [ngClass]="{ actived: screenMenu === 'home' }"
+      (click)="navToPage('home')"
+    >
+      <fa-icon class="text-sm" [icon]="icons.faHome"></fa-icon>
+      Início
+    </div>
+    <div
+      class="flex items-center gap-2"
+      [ngClass]="{ actived: screenMenu !== 'home' }"
+      (click)="navToPage('favorites')"
+    >
+      <fa-icon class="text-sm" [icon]="icons.faHearth"></fa-icon>
+      Favoritos
+      <span
+        class="circle-fav"
+        [ngClass]="{
+          'bg-primary text-white': itemsQtty && screenMenu === 'favorites',
+          'color-fav': !itemsQtty && screenMenu === 'favorites',
+          'bg-white text-primary': screenMenu === 'home'
+        }"
+        >{{ itemsQtty }}</span
+      >
+    </div>
+  </div>
+</div>

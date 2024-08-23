@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="flex flex-col w-full items-center">
+  <div class="md:container px-4 mt-14 w-full">
+    <div class="creepster-regular title-page">Favoritos</div>
+    <div *ngIf="!items.length" class="bg-secondary not-content">
+      <div class="notice-label">Parece que você ainda não tem favoritos</div>
+      <div class="info-label">
+        Volte à página inicial e escolha os melhores para você.
+      </div>
+      <button (click)="goHome()">Voltar ao início</button>
+    </div>
+
+    <div *ngIf="items.length" class="flex flex-wrap list-cards">
+      <app-card *ngFor="let item of items" [profile]="item"></app-card>
+    </div>
+  </div>
+</div>
